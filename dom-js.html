@@ -2,34 +2,145 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>DOM_JS. Считываем информацию из DOM</title>
+    <title>Изменяем кириллицу на латиницу по клику</title>
 </head>
+
 <body>
+
+    <style>
+        .foto{
+            width: 300px; 
+            height: 400px; 
+            object-fit: fill;
+        }
+
+
+        .button1{
+            margin-top: 20px; 
+            margin-bottom: 20px; 
+            width: 120px; 
+            height: 60px;
+            object-fit: fill;
+            background-color: rgb(0, 255, 98);
+        }
+
+    </style>
 
 
     <header>
         <nav style="background-color: #452e8b; padding: 15px; text-align: center;">
            
             <a href="index2.html" style="color: white; margin: 0 10px; text-decoration: none;">Главная</a>
-            <a href="dom-js.html" style="color: white; margin: 0 10px; text-decoration: none;font-weight: bold; ">DOM_JS</a>
-            <a href="change-passport.html" style="color: white; margin: 0 10px; text-decoration: none;">Изменение паспорта</a>
+            <a href="dom-js.html" style="color: white; margin: 0 10px; text-decoration: none;font-weight: bold; ">Паспорт</a>
             <a href="algoritm-task.html" style="color: white; margin: 0 10px; text-decoration: none;">Алгоритмическая задача</a>
     </header>
     <h1>Паспорт</h1>
+
+    <section id="passport_first_page" style="margin: 40px 0;">
+        <table style="
+            width: 50%; 
+            border-collapse: collapse; 
+            background-size: cover;
+            background-position: center;
+            border: 2px solid #000000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+
+            <thead>
+                <tr>
+                    <th colspan=2 style="padding: 40px; font-size: 30px; border: 2px solid;">Российская федерация</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td colspan=2 style="border: 2px solid; font-size: 30px;">Паспорт выдан <span id = "who_issued">ГУ МВД по Г.САНКТ-ПЕТЕРБУРГУ и ЛЕНИНГРАДСКОЙ ОБЛАСТИ</span></td>
+                </tr>
+                <tr>
+                    <td style="border: 2px solid; font-size: 30px;">
+                        Дата выдачи: <span id="date">01.10.2020</span>
+                    </td>
+                    <td style="border: 2px solid; font-size: 30px;">
+                        Код подразделения: <span id="cod">111-111</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan=2 style="border: 2px solid; font-size: 30px; text-align: right;">
+                        Личный код: <span id="personal_cod">444</span>    
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan=2 style="border: 2px solid; font-size: 30px; text-align: left;">
+                        Подпись сотрудника
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan=2 style="border: 2px solid; font-size: 30px; text-align: right;">
+                        Личная подпись
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="passport_second_page" style="margin: 40px 0;">
+        <table style="
+            width: 50%; 
+            border-collapse: collapse; 
+            background-size: cover;
+            background-position: center;
+            border: 2px solid #000000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            <tbody>
+                <tr>
+                    <td rowspan=6>
+                        <img src="https://pechater.ru/wp-content/uploads/2019/08/Krasivye-foto-na-dokumenty-1.jpg" 
+                            alt="мужчина" class="foto">
+                    </td>
+                    <td colspan=2 style="border: 2px solid; font-size: 30px;padding-bottom: 40px;">
+                        Фамилия <span id="lastname">Завгородний</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan=2 style="border: 2px solid; font-size: 30px;padding-bottom: 15px;">
+                        Имя <span id="firstname">Валентин</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan=2 style="border: 2px solid; font-size: 30px">
+                        Отчество <span id="surname">Олегович</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border: 2px solid; font-size: 30px">
+                        Пол Мужской
+                    </td>
+                    <td style="border: 2px solid; font-size: 30px">
+                        дата рождения <span id="birthyear">29.08.2006</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan=2 style="border: 2px solid; font-size: 30px">
+                        место рождения: <span id="stadt">Гор. Санкт-Петербрг</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan=2 style="border: 2px solid; font-size: 30px">
+                        Россия
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
     
-    <div id="page2">
-        <p>Фамилия: <span id="lastname">Иванов</span></p>
-        <p>Имя: <span id="firstname">Иван</span></p>
-        <p>Год рождения: <span id="birthyear">1990</span></p>
-        <p>Место рождения: <span id="stadt">Москва</span></p>
-    </div>
+    
+    
+    
+    
+    
+    
 
-    <div id="page3">
-        <p>Дата выдачи: <span id="date">01.10.2020</span></p>
-        <p>Кем выдан: <span id = "who_issued">ГУ МВД по г.Санкт-Петербргу и ЛО</span></p>
-    </div>
-
-    <button onclick="getData()">Получить данные из DOM</button>
+    <button onclick="getData()" class="button1">Получить данные</button>
     <div id="result"></div>
 
     <script>
@@ -43,9 +154,28 @@
             const issued = document.getElementById('who_issued').innerText
             
             document.getElementById('result').innerHTML = 
-                `Фамилия: ${lastName}<br>Имя: ${firstName}<br>Год: ${birthYear}<br>Город: ${city}<br>Дата выдачи: ${issuedate}<br>Кем выдан: ${issued}`;
+                `Фамилия: ${lastName}<br>Имя: ${firstName}<br>День рождения: ${birthYear}<br>Город: ${city}<br>Дата выдачи: ${issuedate}<br>Кем выдан: ${issued}`;
             
             console.log("Данные из DOM:", lastName, firstName, birthYear, city, issuedate, issued);
+        }
+    </script>
+
+
+    
+
+
+
+    <button onclick="convert()" class="button1">Преобразовать в латиницу</button>
+
+    <script>
+        function convert() {
+            const cyrToLat = {
+                'Завгородний': 'Zavgorodnii',
+                'Валентин': 'Valentin'
+            };
+            
+            document.getElementById('lastname').innerText = cyrToLat['Завгородний'];
+            document.getElementById('firstname').innerText = cyrToLat['Валентин'];
         }
     </script>
 </body>
