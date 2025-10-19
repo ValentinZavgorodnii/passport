@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM_JS. Считываем информацию из DOM</title>
+</head>
+<body>
+
+
+    <header>
+        <nav style="background-color: #452e8b; padding: 15px; text-align: center;">
+           
+            <a href="index2.html" style="color: white; margin: 0 10px; text-decoration: none;">Главная</a>
+            <a href="dom-js.html" style="color: white; margin: 0 10px; text-decoration: none;font-weight: bold; ">DOM_JS</a>
+            <a href="change-passport.html" style="color: white; margin: 0 10px; text-decoration: none;">Изменение паспорта</a>
+            <a href="algoritm-task.html" style="color: white; margin: 0 10px; text-decoration: none;">Алгоритмическая задача</a>
+    </header>
+    <h1>Паспорт</h1>
+    
+    <div id="page2">
+        <p>Фамилия: <span id="lastname">Иванов</span></p>
+        <p>Имя: <span id="firstname">Иван</span></p>
+        <p>Год рождения: <span id="birthyear">1990</span></p>
+        <p>Место рождения: <span id="stadt">Москва</span></p>
+    </div>
+
+    <div id="page3">
+        <p>Дата выдачи: <span id="date">01.10.2020</span></p>
+        <p>Кем выдан: <span id = "who_issued">ГУ МВД по г.Санкт-Петербргу и ЛО</span></p>
+    </div>
+
+    <button onclick="getData()">Получить данные из DOM</button>
+    <div id="result"></div>
+
+    <script>
+        function getData() {
+            
+            const lastName = document.getElementById('lastname').innerText;
+            const firstName = document.getElementById('firstname').innerText;
+            const birthYear = document.getElementById('birthyear').innerText;
+            const city = document.getElementById('stadt').innerText;
+            const issuedate = document.getElementById('date').innerText;
+            const issued = document.getElementById('who_issued').innerText
+            
+            document.getElementById('result').innerHTML = 
+                `Фамилия: ${lastName}<br>Имя: ${firstName}<br>Год: ${birthYear}<br>Город: ${city}<br>Дата выдачи: ${issuedate}<br>Кем выдан: ${issued}`;
+            
+            console.log("Данные из DOM:", lastName, firstName, birthYear, city, issuedate, issued);
+        }
+    </script>
+</body>
+</html>

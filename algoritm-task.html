@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Решение алгоритмической задачи</title>
+</head>
+<body>
+    <header>
+        <nav style="background-color: #452e8b; padding: 15px; text-align: center;">
+           
+            <a href="index2.html" style="color: white; margin: 0 10px; text-decoration: none;">Главная</a>
+            <a href="dom-js.html" style="color: white; margin: 0 10px; text-decoration: none; ">DOM_JS</a>
+            <a href="change-passport.html" style="color: white; margin: 0 10px; text-decoration: none;">Изменение паспорта</a>
+            <a href="algoritm-task.html" style="color: white; margin: 0 10px; text-decoration: none; font-weight: bold;">Алгоритмическая задача</a>
+    </header>
+    <h1>Проверка размещения прямоугольников</h1>
+    
+    <input type="number" id="a" placeholder="Сторона a">
+    <input type="number" id="b" placeholder="Сторона b">
+    <input type="number" id="c" placeholder="Сторона c">
+    <input type="number" id="d" placeholder="Сторона d">
+    
+    <button onclick="checkRectangles()">Проверить</button>
+    <div id="result"></div>
+
+    <script>
+        function checkRectangles() {
+            const a = +document.getElementById('a').value;
+            const b = +document.getElementById('b').value;
+            const c = +document.getElementById('c').value;
+            const d = +document.getElementById('d').value;
+            
+            const fits = (a <= c && b <= d) || (a <= d && b <= c);
+            document.getElementById('result').innerText = 
+                fits ? "Прямоугольник помещается" : "Прямоугольник не помещается";
+        }
+    </script>
+</body>
+</html>
