@@ -5,6 +5,27 @@
     <title>Решение алгоритмической задачи</title>
 </head>
 <body>
+    <style>
+        .input{
+            margin-top: 20px; 
+            margin-bottom: 20px; 
+            width: 120px; 
+            height: 60px;
+            object-fit: fill;
+            background-color: rgb(250, 246, 246);
+            color: rgb(0, 0, 0)
+        }
+        .button{
+            margin-top: 20px; 
+            margin-bottom: 20px; 
+            margin-left: 30px;
+            width: 120px; 
+            height: 60px;
+            object-fit: fill;
+            background-color: rgb(255, 0, 0);
+        }
+    </style>
+    
     <header>
         <nav style="background-color: #452e8b; padding: 15px; text-align: center;">
            
@@ -15,16 +36,16 @@
     </header>
     <h1>Проверка размещения прямоугольников</h1>
     
-    <input type="number" id="a" placeholder="Сторона a">
-    <input type="number" id="b" placeholder="Сторона b">
-    <input type="number" id="c" placeholder="Сторона c">
-    <input type="number" id="d" placeholder="Сторона d">
+    <input class ="input" type="number" id="a" placeholder="Сторона a">
+    <input class ="input" type="number" id="b" placeholder="Сторона b">
+    <input class ="input" type="number" id="c" placeholder="Сторона c">
+    <input class ="input" type="number" id="d" placeholder="Сторона d">
     
-    <button onclick="checkRectangles()">Проверить</button>
+    <button class="button" onclick="check()">Проверить</button>
     <div id="result"></div>
 
     <script>
-        function checkRectangles() {
+        function check() {
             const a = +document.getElementById('a').value;
             const b = +document.getElementById('b').value;
             const c = +document.getElementById('c').value;
